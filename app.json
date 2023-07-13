@@ -1,0 +1,40 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/person/person",
+		"pages/result/result",
+		"pages/app/app",
+		"pages/notification/notification"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#0052d9",
+		"navigationBarTitleText": "手机袋识别",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": true,
+		"color": "#000000",
+		"selectedColor": "#000000",
+		"backgroundColor": "#000000",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath":"pages/app/app",
+				"text": "控制台"
+			},
+			{
+				"pagePath": "pages/notification/notification",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/person/person",
+				"text": "个人"
+			}
+		]
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}

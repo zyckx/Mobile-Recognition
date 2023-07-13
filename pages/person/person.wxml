@@ -1,0 +1,40 @@
+<!--pages/person/person.wxml-->
+<view class='person'>
+	<view class="avatar">
+		<t-avatar class="avatar-image" image="{{image}}" size="large" />
+		<view class="user-info">
+			<text class="user-name">张三</text>
+			<text class="user-id">1008611</text>
+		</view>
+		<view class="user-status">
+			<text class="status">
+				已认证
+			</text>
+		</view>
+	</view>
+	<view class="info-card">
+		<t-cell-group theme="card">
+			<t-cell title="单行标题" leftIcon="service" hover />
+
+
+			<t-cell title="多行带头像" hover arrow>
+				<view class="avatar" slot="left-icon">
+					<open-data type="userAvatarUrl" />
+				</view>
+				<view class="avatar" slot="left-icon">
+					<open-data type="userAvatarUrl" />
+				</view>
+			</t-cell>
+		</t-cell-group>
+	</view>
+	<view class="others">
+		<t-cell title="操作记录" hover arrow />
+		<t-cell title="帮助中心" hover required arrow />
+	</view>
+
+	<view class="more">
+		<t-cell title="其他" hover arrow ariaLabel="单行标题，有16条消息">
+			<t-badge count="{{16}}" slot="note" />
+		</t-cell>
+	</view>
+</view>

@@ -1,0 +1,13 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+
+<t-tab-bar value="{{value}}" bindchange="onChange"  split="{{false}}">
+  <t-tab-bar-item
+    wx:for="{{list}}"
+    wx:key="index"
+    value="{{item.value}}"
+    icon="{{item.icon}}"
+    ariaLabel="{{item.ariaLabel}}"
+  >
+    {{item.label}}
+  </t-tab-bar-item>
+</t-tab-bar>

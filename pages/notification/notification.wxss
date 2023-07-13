@@ -1,0 +1,34 @@
+/* pages/notification/notification.wxss */
+.tabs-wrap {
+    width: 100%;
+    height: 75rpx;
+}
+.tab-lists {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tab {
+    /* background-color: pink; */
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tab.active::after {
+    /* background-color: blue; */
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    /* left: -50%; */
+    width: 95%;
+    height: 2rpx;
+    /* transform: translateY(-50%); */
+    background-color: blue;
+}

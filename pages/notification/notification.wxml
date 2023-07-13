@@ -1,0 +1,8 @@
+<!--pages/notification/notification.wxml-->
+<view class="tabs-wrap">
+	<view class="tab-lists">
+		<view wx:for="{{tabLists}}" wx:key="id" class="{{item.value==tabValue?'tab active':'tab'}}" data-value="{{item.value}}" bind:tap="onTabsClick">
+			{{item.label}}
+		</view>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "t-navbar": "tdesign-miniprogram/navbar/navbar",
+		"t-icon": "tdesign-miniprogram/icon/icon",
+		"t-input": "tdesign-miniprogram/input/input",
+        "t-cell": "tdesign-miniprogram/cell/cell",
+        "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
+        "t-loading": "tdesign-miniprogram/loading/loading",
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-picker": "tdesign-miniprogram/picker/picker",
+		"t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
+	},
+	"navigationBarTitleText": "计算结果"
+}
