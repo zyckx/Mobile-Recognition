@@ -1,29 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-	<view class="sensorName">
-		<t-input label="传感器名称" placeholder="请输入传感器名称" bindchange="inputChange" data-id="sensorName" value="{{sensorName}}"></t-input>
+	<view class="example-search">
+		<t-search model:value="{{value}}" placeholder="搜索预设文案" />
 	</view>
-	<view class="sensorDate">
-		<view class="dateSelect">时间</view>
-		<t-cell title="" hover note="{{startTime.datetimeText}}" arrow data-mode="datetime" data-type="startTime" bindtap="showPicker" t-class="datePicker" />
-		<!-- 年月日时分 -->
-		<t-date-time-picker title="选择日期和时间" visible="{{startTime.datetimeVisible}}" mode="second" value="{{startTime.datetime}}" format="YYYY-MM-DD HH:mm:ss" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker" />
+	<t-grid class="block" column="{{4}}">
+		<t-grid-item text="标题文字" image="{{img1}}" />
+		<t-grid-item text="标题文字" image="{{img2}}" />
+		<t-grid-item text="最多六个文字" image="{{img3}}" />
+		<t-grid-item text="最多六个文字" image="{{img3}}" />
+	</t-grid>
 
+	<t-grid class="block1" column="{{4}}" >
+		<t-grid-item text="标题文字" image="{{img1}}" />
+		<t-grid-item text="标题文字" image="{{img2}}" />
+		<t-grid-item text="标题文字" image="{{img3}}" />
+		<t-grid-item text="最多五个字" image="{{img1}}" />
+		<t-grid-item text="标题文字" image="{{img1}}" />
+		<t-grid-item text="标题文字" image="{{img3}}" />
+		<t-grid-item text="标题文字" image="{{img1}}" />
+		<t-grid-item text="最多五个字" image="{{img2}}" />
+	</t-grid>
+	<view class="swiper-wrap">
+		<t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" list="{{swiperList}}" navigation="{{ { type: 'dots-bar' } }}" />
 
-
-
-		<t-cell title="" hover note="{{endTime.datetimeText}}" arrow data-mode="datetime" data-type="endTime" bindtap="showPicker" t-class="datePicker" />
-		<!-- 年月日时分 -->
-		<t-date-time-picker title="选择日期和时间" visible="{{endTime.datetimeVisible}}" mode="second" value="{{endTime.datetime}}" format="YYYY-MM-DD HH:mm:ss" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker" />
 	</view>
-	<view class="computeType">
-		<t-cell class="typeName" title="计算类型" arrow hover note="{{computeType.computeText}}" bind:click="onComputePicker" />
-		<t-picker visible="{{computeType.computeVisible}}" value="{{computeValue}}" data-key="compute" title="选择计算类型" cancelBtn="取消" confirmBtn="确认" bindchange="onComputeTypePickerChange" bindpick="onComputeTypeColumnChange" bindcancel="onComputeTypePickerCancel">
-			<t-picker-item options="{{computeType.types}}" />
-		</t-picker>
-	</view>
-	<view class="buttonGroup">
-		<t-button theme="primary" block size="medium" class="btn serarch" bindtap="search">查询</t-button>
-		<t-button theme="light" block size="medium" class="btn reset" bindtap="reset">重置</t-button>
-	</view>
+
 </view>

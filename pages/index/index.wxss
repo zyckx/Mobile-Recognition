@@ -1,47 +1,27 @@
 /**index.wxss**/
 .container {
 	width: 100%;
-	margin-top: 20%;
-	padding: 5%;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-	justify-content: space-around;
-	/* justify-self: start; */
+	background: #f4f5f9;
 }
 
-.sensorName {
-	margin-bottom: 30rpx;
+.example-search {
+	background-color: #fff;
+	padding: 16rpx 32rpx;
 }
 
-.sensorDate {
-	width: 100%;
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content:space-around;
-	margin-bottom: 30rpx;
-}
-.sensorDate .dateSelect{
-	width: 50rpx;
-	white-space: nowrap;
-	transform: translateX(19rpx);
-}
-.sensorDate .datePicker{
-	width: 260rpx;
+.block {
+	display: block;
 }
 
-.computeType {
-	width: 100%;
+.container .t-grid:last-child {
+	display: block;
+	margin-bottom: 32rpx;
+	background: #f4f5f9;
+	background-color: red;
 }
-
-.buttonGroup {
-	display: flex;
-	flex-wrap: nowrap;
-}
-
-.buttonGroup .btn {
-	width: 300rpx;
-	margin: 20rpx;
+.swiper-wrap{
+	padding: 16rpx 32rpx;
 }
