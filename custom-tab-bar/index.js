@@ -8,7 +8,7 @@ Component({
 				ariaLabel: '首页'
 			},
 			{
-				value: '/pages/app/app',
+				value: '/pages/control/control',
 				label: '控制台',
 				icon: 'app',
 				ariaLabel: '我的'

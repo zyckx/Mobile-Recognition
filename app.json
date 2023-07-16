@@ -3,8 +3,9 @@
 		"pages/index/index",
 		"pages/person/person",
 		"pages/result/result",
-		"pages/app/app",
-		"pages/notification/notification"
+		"pages/control/control",
+		"pages/notification/notification",
+		"pages/heatmap/index"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -22,7 +23,7 @@
 				"text": "首页"
 			},
 			{
-				"pagePath":"pages/app/app",
+				"pagePath": "pages/control/control",
 				"text": "控制台"
 			},
 			{

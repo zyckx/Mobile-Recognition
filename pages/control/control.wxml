@@ -1,0 +1,22 @@
+<!--pages/app/app.wxml-->
+<view class="app-wrap">
+	<t-cell-group theme="card">
+		<t-cell title="单行标题" hover arrow></t-cell>
+		<t-cell title="单行标题" leftIcon="internet" hover arrow />
+		<t-cell title="单行标题" leftIcon="lock-on" hover arrow />
+	</t-cell-group>
+	<view class="block">
+		<t-grid column="{{2}}" border="{{border}}" align="left">
+			<t-grid-item text="标题文字" description="描述文字" layout="horizontal" image="{{img1}}" />
+			<t-grid-item text="标题文字" description="描述文字" layout="horizontal" image="{{img2}}" />
+		</t-grid>
+	</view>
+	<view class="test">
+		<ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+	</view>
+</view>
+<view class="box" bindtap="onTest">
+test
+</view>
+
+<ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>

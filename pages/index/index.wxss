@@ -16,11 +16,11 @@
 	display: block;
 }
 
-.container .t-grid:last-child {
-	display: block;
-	margin-bottom: 32rpx;
-	background: #f4f5f9;
-	background-color: red;
+.notice-bar-wrap{
+	margin: 16rpx 32rpx;
+	padding: 5rpx;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 20rpx;
 }
 .swiper-wrap{
 	padding: 16rpx 32rpx;
