@@ -3,12 +3,9 @@
 		"t-input": "tdesign-miniprogram/input/input",
 		"t-cell": "tdesign-miniprogram/cell/cell",
 		"t-loading": "tdesign-miniprogram/loading/loading",
-		"t-button": "tdesign-miniprogram/button/button",
 		"t-search": "tdesign-miniprogram/search/search",
-		"t-grid": "tdesign-miniprogram/grid/grid",
-		"t-grid-item": "tdesign-miniprogram/grid-item/grid-item",
-		"t-swiper": "tdesign-miniprogram/swiper/swiper",
-		"t-swiper-nav": "tdesign-miniprogram/swiper-nav/swiper-nav",
-		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar"
+		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
+		"t-action-sheet": "tdesign-miniprogram/action-sheet/action-sheet",
+		"t-button": "tdesign-miniprogram/button/button"
 	}
 }

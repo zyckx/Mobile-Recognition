@@ -3,32 +3,13 @@
 	<view class="example-search">
 		<t-search model:value="{{value}}" placeholder="搜索预设文案" />
 	</view>
-	<t-grid class="block" column="{{4}}">
-		<t-grid-item text="标题文字" image="{{img1}}" />
-		<t-grid-item text="标题文字" image="{{img2}}" />
-		<t-grid-item text="最多六个文字" image="{{img3}}" />
-		<t-grid-item text="最多六个文字" image="{{img3}}" />
-	</t-grid>
-
-	<t-grid class="block1" column="{{4}}" style="background: #f4f5f9;">
-		<t-grid-item text="标题文字" image="{{img1}}" />
-		<t-grid-item text="标题文字" image="{{img2}}" />
-		<t-grid-item text="标题文字" image="{{img3}}" />
-		<t-grid-item text="最多五个字" image="{{img1}}" />
-		<t-grid-item text="标题文字" image="{{img1}}" />
-		<t-grid-item text="标题文字" image="{{img3}}" />
-		<t-grid-item text="标题文字" image="{{img1}}" />
-		<t-grid-item text="最多五个字" image="{{img2}}" />
-	</t-grid>
-	<view class="notice-bar-wrap">
-		<t-notice-bar visible="{{true}}" direction="vertical" interval="{{3000}}" content="{{content}}" prefixIcon="sound" bind:click="click"
-		></t-notice-bar>
+	<view class="search-wrap">
+		<view class="search-round">
+			<text>识别</text>
+		</view>
 	</view>
-	<view class="swiper-wrap">
-		<t-swiper current="{{current}}" autoplay="{{autoplay}}" duration="{{duration}}" interval="{{interval}}" list="{{swiperList}}" navigation="{{ { type: 'dots-bar' } }}"
-		pagination-position="bottom-right"
-		 />
+	<view class="search-list-wrap">
+		<t-button theme="primary" size="large"  bind:tap="showDescAction" block t-class="history-btn">历史记录</t-button>
+		<t-action-sheet id="t-action-sheet" bind:selected="handleSelected" />
 	</view>
-
-
 </view>

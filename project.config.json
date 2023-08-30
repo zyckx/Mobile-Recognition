@@ -32,7 +32,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"condition": false,
+		"condition": true,
 		"ignoreUploadUnusedFiles": true
 	},
 	"compileType": "miniprogram",
@@ -48,5 +48,9 @@
 		"ignore": [],
 		"include": []
 	},
-	"appid": "wx8a2ce3947e2de3e3"
+	"appid": "wx8a2ce3947e2de3e3",
+	"projectArchitecture": "multiPlatform",
+	"simulatorPluginLibVersion": {
+		"wxext14566970e7e9f62": "2.27.3"
+	}
 }
