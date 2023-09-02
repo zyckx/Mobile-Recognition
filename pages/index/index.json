@@ -6,6 +6,7 @@
 		"t-search": "tdesign-miniprogram/search/search",
 		"t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
 		"t-action-sheet": "tdesign-miniprogram/action-sheet/action-sheet",
-		"t-button": "tdesign-miniprogram/button/button"
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-dialog": "tdesign-miniprogram/dialog/dialog"
 	}
 }

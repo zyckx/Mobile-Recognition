@@ -14,12 +14,6 @@ Component({
 				ariaLabel: '我的'
 			},
 			{
-				value: '/pages/notification/notification',
-				label: '消息',
-				icon: 'notification',
-				ariaLabel: '消息'
-			},
-			{
 				value: '/pages/person/person',
 				label: '首页',
 				icon: 'user',

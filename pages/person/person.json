@@ -1,12 +1,14 @@
 {
+	"navigationBarTitleText": "个人中心",
+	"navigationStyle": "custom",
 	"usingComponents": {
-		"t-avatar": "tdesign-miniprogram/avatar/avatar",
-		"t-avatar-group": "tdesign-miniprogram/avatar-group/avatar-group",
+		"t-popup": "tdesign-miniprogram/popup/popup",
+		"t-icon": "tdesign-miniprogram/icon/icon",
+		"t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
 		"t-cell": "tdesign-miniprogram/cell/cell",
-		"t-badge": "tdesign-miniprogram/badge/badge",
-		"t-switch": "tdesign-miniprogram/switch/switch",
-		"t-icon": "tdesign-miniprogram/icon/icon"
+		"t-user-center-card": "./components/user-center-card/index",
+		"t-order-group": "./components/order-group/index",
+		"t-toast": "tdesign-miniprogram/toast/toast"
 	},
-	"navigationBarBackgroundColor": "#409eff",
-	"navigationBarTitleText": "我的"
+	"enablePullDownRefresh": true
 }

@@ -1,0 +1,11 @@
+{	
+	"usingComponents": {
+		"t-input": "tdesign-miniprogram/input/input",
+		"t-button": "tdesign-miniprogram/button/button",
+		"t-radio": "tdesign-miniprogram/radio/radio",
+		"t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+		"t-toast": "tdesign-miniprogram/toast/toast"
+	},
+	"navigationBarTitleText": "登录",
+	"navigationBarBackgroundColor": "#000000"
+}

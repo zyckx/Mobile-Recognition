@@ -2,10 +2,11 @@
 	"pages": [
 		"pages/index/index",
 		"pages/person/person",
-		"pages/result/result",
 		"pages/control/control",
-		"pages/notification/notification",
-		"pages/heatmap/index"
+		"pages/heatmap/index",
+		"pages/index/result/result",
+		"pages/person/person-info/index",
+		"pages/person/login/login"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -27,10 +28,7 @@
 				"pagePath": "pages/control/control",
 				"text": "控制台"
 			},
-			{
-				"pagePath": "pages/notification/notification",
-				"text": "消息"
-			},
+			
 			{
 				"pagePath": "pages/person/person",
 				"text": "个人"

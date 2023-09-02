@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-	<view class="example-search">
+	<view class="example-search" bind:tap="gotoresult">
 		<t-search model:value="{{value}}" placeholder="搜索预设文案" />
 	</view>
 	<view class="search-wrap">
-		<view class="search-round">
+		<view class="search-round" bind:tap="UploadImage">
 			<text>识别</text>
 		</view>
 	</view>
@@ -13,3 +13,9 @@
 		<t-action-sheet id="t-action-sheet" bind:selected="handleSelected" />
 	</view>
 </view>
+<t-dialog
+  visible="{{showText}}"
+  content="{{dialogContent}}"
+  confirm-btn="{{ confirmBtn }}"
+  bind:confirm="closeDialog"
+/>

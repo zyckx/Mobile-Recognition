@@ -1,0 +1,69 @@
+/* pages/login/login.wxss */
+.login-wrap{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.banner{
+	width: 100%;
+}
+.banner-image{
+	width: 100%;
+	clip-path: inset(0 -55% 0 -55% round 0 0 100% 100%);
+}
+.login-form{
+	width: 100%;
+	margin-top: 70rpx;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+}
+.login-form text{
+	font-size: 45rpx;
+	font-weight: 600;
+}
+.login-form input{
+	margin: 20rpx 0;
+}
+.agree{
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	font-size: 30rpx;
+}
+.agreement{
+display: flex;
+}
+.user-agree,.privacy-agree{
+	color: rgb(255, 0, 0);
+}
+.suffix {
+	display: flex;
+	align-items: center;
+}
+
+.suffix--line {
+	width: 1px;
+	height: 24px;
+	background-color: #f6f6f6;
+	margin-right: 16px;
+}
+
+.image {
+	width: 72px;
+	height: 36px;
+	display: block;
+	margin-top: -6px;
+	margin-bottom: -6px;
+}
+
+.tips {
+	text-align: right !important;
+}
+
+.verify {
+	color: rgba(0, 82, 217, 1);
+	font-size: 32rpx;
+}

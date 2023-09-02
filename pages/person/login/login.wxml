@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<view class="login-wrap">
+	<view class="banner">
+		<image class="banner-image" src="https://gitcode.net/qq_38679197/zygalaxy/-/raw/3fd8dbe8119e7075bfbe5b352636834f1a66960f/login_banner.png" mode="widthFix" />
+	</view>
+	<view class="login-form">
+		<text>欢迎登录</text>
+		<t-input label="" placeholder="输入手机号码" value="{{phoneNumber}}" type="number" tips="{{phoneError ? '手机号输入不正确' : ''}}" bindchange="onPhoneInput">
+		</t-input>
+		<t-input label="" type="password" value="{{textPassword}}" placeholder="请输入密码" />
+		<t-button theme="{{isAgreed? 'primary':'light'}}" block size="large" bind:tap="onLogin">登录</t-button>
+		<view class="agree">
+			<t-radio value="false" label="" bind:change="onChange" />
+			<view class="agreement">
+				同意
+				<view class="user-agree">
+					《用户协议》
+				</view> 和
+				<view class="privacy-agree">
+				《隐私协议》
+				</view>
+			</view>
+		</view>
+
+	</view>
+</view>
+<t-toast id="t-toast" />

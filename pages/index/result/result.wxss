@@ -1,0 +1,56 @@
+/* pages/result/result.wxss */
+.container {
+	width: 100%;
+	margin-top: 20%;
+	padding: 0 5%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+
+
+
+
+/* 在样式文件中定义样式 */
+.table {
+	width: 100%;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+.row {
+	display: flex;
+	border: 1px solid #ccc;
+}
+
+.cell {
+	flex: 1;
+	padding: 8px;
+	text-align: center;
+}
+
+.header {
+	font-weight: bold;
+	background-color: #0052d9;
+	color: #ffffff;
+}
+
+.buttonGroup {
+	margin-top: 35rpx;
+}
+
+.buttonGroup {
+	width: 100%;
+	margin-top: 190rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+
+.buttonGroup .btn {
+	width: 300rpx;
+}

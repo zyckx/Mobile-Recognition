@@ -1,40 +1,47 @@
-<!--pages/person/person.wxml-->
-<view class='person'>
-	<view class="avatar">
-		<t-avatar class="avatar-image" image="{{image}}" size="large" />
-		<view class="user-info">
-			<text class="user-name">张三</text>
-			<text class="user-id">1008611</text>
-		</view>
-		<view class="user-status">
-			<text class="status">
-				已认证
-			</text>
-		</view>
-	</view>
-	<view class="info-card">
-		<t-cell-group theme="card">
-			<t-cell title="单行标题" leftIcon="service" hover />
-
-
-			<t-cell title="多行带头像" hover arrow>
-				<view class="avatar" slot="left-icon">
-					<open-data type="userAvatarUrl" />
-				</view>
-				<view class="avatar" slot="left-icon">
-					<open-data type="userAvatarUrl" />
-				</view>
-			</t-cell>
-		</t-cell-group>
-	</view>
-	<view class="others">
-		<t-cell title="操作记录" hover arrow />
-		<t-cell title="帮助中心" hover required arrow />
-	</view>
-
-	<view class="more">
-		<t-cell title="其他" hover arrow ariaLabel="单行标题，有16条消息">
-			<t-badge count="{{16}}" slot="note" />
-		</t-cell>
-	</view>
+<t-user-center-card
+  userInfo="{{userInfo}}"
+  isPhoneHide="{{true}}"
+  name-class="custom-name-class"
+  phone-class="custom-phone-class"
+  avatar-class="customer-avatar-class"
+  currAuthStep="{{currAuthStep}}"
+  bind:gotoUserEditPage="gotoUserEditPage"
+/>
+<view class="content-wrapper">
+  <view class="order-group-wrapper">
+    <t-order-group orderTagInfos="{{orderTagInfos}}" bind:onClickTop="jumpAllOrder" bind:onClickItem="jumpNav" />
+  </view>
+  <view wx:for="{{menuData}}" wx:key="item" class="cell-box">
+    <t-cell-group>
+      <t-cell
+        wx:for="{{item}}"
+        wx:for-item="xitem"
+        wx:for-index="xindex"
+        wx:key="xindex"
+        title="{{xitem.title}}"
+        arrow="{{!xitem.icon}}"
+        note="{{xitem.tit}}"
+        data-type="{{xitem.type}}"
+        bordered="{{false}}"
+        bind:click="onClickCell"
+        t-class="t-cell-padding"
+        t-class-note="order-group-note"
+        t-class-left="order-group__left"
+      >
+        <t-icon name="{{xitem.icon}}" size="48rpx" slot="note" />
+      </t-cell>
+    </t-cell-group>
+  </view>
 </view>
+<view class="footer__version" wx:if="{{versionNo !== ''}}">当前版本 {{versionNo}}</view>
+<t-popup visible="{{showMakePhone}}" placement="bottom" bind:visible-change="closeMakePhone" data-index="2">
+  <view class="popup-content">
+    <view class="popup-title border-bottom-1px" wx:if="{{customerServiceInfo.serviceTimeDuration}}">
+      服务时间: {{customerServiceInfo.serviceTimeDuration}}
+    </view>
+    <view class="popup-phone {{showKefu ? 'border-bottom-1px' : ''}}" bind:tap="call">电话客服</view>
+    <button class="popup-phone border-bottom-1px online" open-type="contact" wx:if="{{showKefu}}">在线客服</button>
+    <view class="popup-close" bind:tap="closeMakePhone">取消</view>
+  </view>
+</t-popup>
+<t-toast id="t-toast" />

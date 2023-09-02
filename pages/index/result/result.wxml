@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="table">
+    <!-- 表格标题行 -->
+    <view class="row header">
+      <text class="cell">姓名</text>
+      <text class="cell">学号</text>
+      <text class="cell">备注</text>
+    </view>
+
+    <!-- 数据行，假设有多个学生数据 -->
+    <view class="row" wx:for="{{subItem.item}}" wx:key="index">
+      <text class="cell">{{item.name}}</text>
+      <text class="cell">{{item.number}}</text>
+      <text class="cell">{{item.remark}}</text>
+    </view>
+  </view>
+
+  <view class="buttonGroup">
+    <t-button theme="primary" block size="medium" class="btn" bindtap="onBack">放弃</t-button>
+    <t-button theme="primary" block size="medium" class="btn" bindtap="onSubmit">提交</t-button>
+  </view>
+</view>

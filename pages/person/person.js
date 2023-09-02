@@ -1,90 +1,175 @@
-// pages/person/person.js
+import Toast from 'tdesign-miniprogram/toast/index';
+
+const menuData = [
+  [
+    {
+      title: '导入数据班级',
+      tit: '',
+      url: '',
+      type: 'address',
+    },
+    {
+      title: '导入课堂',
+      tit: '',
+      url: '',
+      type: 'coupon',
+    },
+  ],
+  [
+    {
+      title: '关于',
+      tit: '',
+      url: '',
+      type: 'service',
+      icon: 'service',
+    },
+  ],
+];
+
+const orderTagInfos = [
+  {
+    title: '待付款',
+    iconName: 'wallet',
+    orderNum: 0,
+    tabType: 5,
+    status: 1,
+  },
+  {
+    title: '待发货',
+    iconName: 'deliver',
+    orderNum: 0,
+    tabType: 10,
+    status: 1,
+  },
+  {
+    title: '待收货',
+    iconName: 'package',
+    orderNum: 0,
+    tabType: 40,
+    status: 1,
+  },
+  {
+    title: '待评价',
+    iconName: 'comment',
+    orderNum: 0,
+    tabType: 60,
+    status: 1,
+  },
+  {
+    title: '退款/售后',
+    iconName: 'exchang',
+    orderNum: 0,
+    tabType: 0,
+    status: 1,
+  },
+];
+
+const getDefaultData = () => ({
+  showMakePhone: false,
+  userInfo: {
+    avatarUrl: '',
+    nickName: '正在登录...',
+    phoneNumber: '',
+  },
+  menuData,
+  orderTagInfos,
+  customerServiceInfo: {},
+  currAuthStep: 1,
+  showKefu: true,
+  versionNo: '',
+});
+
 Page({
-    /**
-     * 页面的初始数据
-     */
-    data: {
-		image: 'https://tdesign.gtimg.com/miniprogram/images/avatar1.png',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse("button.open-type.getUserInfo"),
-        canIUseGetUserProfile: false,
-        canIUseOpenData:
-            wx.canIUse("open-data.type.userAvatarUrl") &&
-            wx.canIUse("open-data.type.userNickName"), // 如需尝试获取用户信息可改为false
-    },
+  data: getDefaultData(),
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-        if (wx.getUserProfile) {
-            this.setData({
-                canIUseGetUserProfile: true,
-            });
-        }
-    },
+  onLoad() {
+    this.getVersionInfo();
+  },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {},
+  onShow() {
+	if (typeof this.getTabBar === "function" && this.getTabBar()) {
+		const page = getCurrentPages().pop();
+		this.getTabBar().setData({
+			value: "/" + page.route,
+		});
+	}
+    this.init();
+  },
+  onPullDownRefresh() {
+    this.init();
+  },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-        if (typeof this.getTabBar === "function" && this.getTabBar()) {
-            const page = getCurrentPages().pop();
-            this.getTabBar().setData({
-                value: "/" + page.route,
-            });
-        }
-    },
+  init() {
+    this.fetUseriInfoHandle();
+  },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {},
+  fetUseriInfoHandle() {
+  
+  },
+  onClickCell({ currentTarget }) {
+    const { type } = currentTarget.dataset;
+    switch (type) {
 
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {},
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {},
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {},
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {},
-    getUserProfile(e) {
-        // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-        wx.getUserProfile({
-            desc: "展示用户信息", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-            success: (res) => {
-                console.log(res);
-                this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true,
-                });
-            },
+      case 'service': {
+        this.openMakePhone();
+        break;
+      }
+      case 'help-center': {
+        Toast({
+          context: this,
+          selector: '#t-toast',
+          message: '你点击了帮助中心',
+          icon: '',
+          duration: 1000,
         });
-    },
-    getUserInfo(e) {
-        // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-        console.log(e);
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true,
+        break;
+      }
+   
+      
+      default: {
+        Toast({
+          context: this,
+          selector: '#t-toast',
+          message: '未知跳转',
+          icon: '',
+          duration: 1000,
         });
-    },
+        break;
+      }
+    }
+  },
+
+  openMakePhone() {
+    this.setData({ showMakePhone: true });
+  },
+
+  closeMakePhone() {
+    this.setData({ showMakePhone: false });
+  },
+
+  call() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.customerServiceInfo.servicePhone,
+    });
+  },
+
+  gotoUserEditPage() {
+    const { currAuthStep } = this.data;
+    if (currAuthStep === 2) {
+      wx.navigateTo({ url: '/pages/person/person-info/index' });
+    } else {
+	  this.fetUseriInfoHandle();
+	  wx.navigateTo({
+		url: '/pages/person/login/login',
+	  })
+    }
+  },
+
+  getVersionInfo() {
+    const versionInfo = wx.getAccountInfoSync();
+    const { version, envVersion = __wxConfig } = versionInfo.miniProgram;
+    this.setData({
+      versionNo: envVersion === 'release' ? version : envVersion,
+    });
+  },
 });
